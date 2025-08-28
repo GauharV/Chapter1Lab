@@ -1,11 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+import java.util.Scanner;
+
+public class Main {
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static String getInput(String prompt) {
+        System.out.print(prompt);
+        return scanner.nextLine();
+    }
+
+    public static int getIntInput(String prompt) {
+        System.out.print(prompt);
+        int input = scanner.nextInt();
+        scanner.nextLine();  // consume leftover newline
+        return input;
+    }
+
+    public static void main(String[] args) {
+        int T1 = getIntInput("Enter first Test Score: ");
+        int T2 = getIntInput("Enter second Test Score: ");
+        int T3 = getIntInput("Enter third Test Score: ");
+
+        // Calculate average as double to avoid integer division rounding issues
+        double avgScore = (T1 + T2 + T3) / 3.0;
+        System.out.println("Your Average is: " + avgScore);
+
+        if (avgScore >= 90 && avgScore <= 100) {
+            System.out.println("Your Letter Grade is: A");
+        } else if (avgScore >= 80 && avgScore < 90) {
+            System.out.println("Your Letter Grade is: B");
+        } else if (avgScore >= 70 && avgScore < 80) {
+            System.out.println("Your Letter Grade is: C");
+        } else if (avgScore >= 60 && avgScore < 70) {
+            System.out.println("Your Letter Grade is: D");
+        } else {
+            System.out.println("Your Letter Grade is: F");
+        }
+    }
+}
