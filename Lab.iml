@@ -1,3 +1,5 @@
+#I asked Chatgpt to fix my syntax error
+
 import java.util.Scanner;
 
 public class Main {
@@ -37,3 +39,4 @@ public class Main {
         }
     }
 }
+
