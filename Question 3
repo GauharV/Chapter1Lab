@@ -1,0 +1,38 @@
+#Question 3
+# I did use chatgpt for syntax placement and certain functions
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static String getInput(String prompt) {
+        System.out.print(prompt);
+        return scanner.nextLine();
+    }
+
+    public static int getIntInput(String prompt) {
+        System.out.print(prompt);
+        return scanner.nextInt();
+    }
+
+    public static void main(String[] args) {
+        int guessInt = 37; 
+        int ansInt = 0;
+
+
+        while (ansInt != guessInt) {
+            ansInt = getIntInput("Guess a number between 1 and 100: ");
+
+            if (ansInt > guessInt) {
+                System.out.println("Too high!");
+            } else if (ansInt < guessInt) {
+                System.out.println("Too low!");
+            } else {
+                System.out.println("Correct! You got it!");
+            }
+        }
+    }
+}
